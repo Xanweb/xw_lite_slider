@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+.vscode
+thumbs.db
+__MACOSX
+._*
+.*swp
+.*swo
+/build/node_modules/
+/build/mix-manifest.json
+composer.phar
+composer.lock
+__pycache__/
+/dist/

@@ -1,0 +1,48 @@
+Lite Slider
+Copyright (c) 2021 Xanweb
+MIT License (see LICENSE)
+
+This package bundles or derives from the third-party components listed below.
+Each is distributed under the MIT License; the copyright lines are given as
+found in the bundled files.
+
+------------------------------------------------------------------------------
+
+Glide.js 3.6.0
+  Path:      js/glide.js (see js/glide.js.license.txt)
+             css/lite-slider.css (compiled from glide.core.scss, see build/)
+  License:   MIT
+  Copyright: (c) 2013-2022 Jędrzej Chałubek
+  Source:    https://github.com/glidejs/glide
+
+Bootstrap 4.6 (Sass functions, variables, breakpoints and the stretched-link
+utility)
+  Path:      css/lite-slider.css, css/lite-slider-theme.css (compiled from
+             build/assets/sass in the source repository,
+             https://github.com/Xanweb/xw_lite_slider)
+  License:   MIT
+  Copyright: Copyright 2011-2021 The Bootstrap Authors, Twitter, Inc.
+  Source:    https://getbootstrap.com/
+             https://github.com/twbs/bootstrap/blob/v4-dev/LICENSE
+
+Sortable 1.10.2
+  Path:      vendor/xanweb/ls-v-item-list/js/v-item-list.js
+             (see v-item-list.js.LICENSE.txt in the same folder)
+  License:   MIT
+  Copyright: authors RubaXa and owenm
+  Source:    https://github.com/SortableJS/Sortable
+
+vuedraggable (Vue.Draggable)
+  Path:      bundled inside vendor/xanweb/ls-v-item-list/js/v-item-list.js
+  Version:   not recorded in the bundle
+  License:   MIT
+  Copyright: Copyright (c) 2016-2019 David Desmaisons
+  Source:    https://github.com/SortableJS/Vue.Draggable
+  Vue itself is not bundled; it is loaded from ConcreteCMS core.
+
+Xanweb helper libraries (ls-block, ls-common, ls-html-helpers,
+ls-js-localization, ls-module, ls-request, ls-v-item-list)
+  Path:      vendor/xanweb/ls-*/ (each folder has its own LICENSE file)
+  License:   MIT
+  Copyright: Copyright (c) 2021 Xanweb
+  Source:    https://www.xanweb.com

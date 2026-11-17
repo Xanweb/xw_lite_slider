@@ -1,0 +1,85 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+@import "variables";
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+
+.#{$glide-class} {
+    $this: &;
+
+    $se: $glide-element-separator;
+    $sm: $glide-modifier-separator;
+
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+
+    &#{$sm}initialized {
+        opacity: 1;
+    }
+
+    &#{$se}slide {
+        &-img {
+            width: 100%;
+            height: 100% !important; // Mandatory to override (div.ccm-page img)
+            object-fit: cover;
+            &--top {
+                object-position: top;
+            }
+            &--bottom {
+                object-position: bottom;
+            }
+            &--center {
+                object-position: center;
+            }
+            &--right {
+                object-position: right;
+            }
+            &--left {
+                object-position: left;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            picture {
+                flex: auto;
+            }
+        }
+        &-overlay {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            opacity: var(--xw-lite-slider-overlay-opacity, $xw-lite-slider-overlay-opacity);
+        }
+    }
+
+    &#{$se}slides {
+        height: var(--xw-lite-slider-slides-height, $xw-lite-slider-slides-height);
+        @include media-breakpoint-down(md) {
+            height: var(--xw-lite-slider-slides-height-sm, $xw-lite-slider-slides-height-sm);
+        }
+    }
+
+    &#{$se}slides#{$sm}fade {
+        transform: translateZ(0) !important;
+
+        #{$this + $se}slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            order: 2;
+            transition: opacity ease-in-out;
+            opacity: 0;
+        }
+
+        #{$this + $se}slide#{$sm}active {
+            position: relative;
+            order: 1;
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+}

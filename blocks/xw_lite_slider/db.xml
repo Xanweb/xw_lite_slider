@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 https://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+
+    <table name="btXwLiteSlider">
+        <field name="bID" type="integer">
+            <unsigned/>
+            <key/>
+        </field>
+        <field name="sliderOptions" type="text"/>
+        <field name="maxWidth" type="integer">
+            <default value="0"/>
+        </field>
+        <field name="useCustomThumbnailsSetting" type="boolean">
+            <default value="0"/>
+        </field>
+        <field name="largeDesktopThumbnail" type="string" size="255"/>
+        <field name="desktopThumbnail" type="string" size="255"/>
+        <field name="tabletThumbnail" type="string" size="255"/>
+        <field name="phoneThumbnail" type="string" size="255"/>
+    </table>
+
+    <table name="btXwLiteSliderEntries">
+        <field name="id" type="integer">
+            <unsigned/>
+            <autoincrement/>
+            <key/>
+        </field>
+        <field name="bID" type="integer">
+            <unsigned/>
+        </field>
+        <field name="fID" type="integer">
+            <unsigned/>
+            <default value="0"/>
+        </field>
+        <field name="linkExtern" type="string" size="255"/>
+        <field name="internalLinkCID" type="integer">
+            <unsigned/>
+            <default value="0"/>
+        </field>
+        <field name="title" type="text"/>
+        <field name="description" type="text"/>
+        <field name="imageAlt" type="text"/>
+        <field name="titleColor" type="string" size="50"/>
+        <field name="boxColor" type="string" size="50"/>
+        <field name="overlayColor" type="string" size="50"/>
+        <field name="sortOrder" type="integer" size="10"/>
+    </table>
+</schema>

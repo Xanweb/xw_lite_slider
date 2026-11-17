@@ -1,0 +1,31 @@
+name: Question / help
+description: Ask how to use or configure Lite Slider
+labels: [question]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: lite_slider_version
+    attributes:
+      label: Lite Slider version
+      placeholder: "2.0.2"
+    validations:
+      required: true
+  - type: input
+    id: concrete_version
+    attributes:
+      label: ConcreteCMS version
+      placeholder: "9.0.0"
+    validations:
+      required: true
+  - type: input
+    id: php_version
+    attributes:
+      label: PHP version
+      placeholder: "8.2"
+    validations:
+      required: true

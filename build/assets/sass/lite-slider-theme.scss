@@ -1,0 +1,146 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+@import "variables";
+
+.#{$glide-class} {
+  $this: &;
+
+  $se: $glide-element-separator;
+  $sm: $glide-modifier-separator;
+
+  @import "~bootstrap/scss/utilities/stretched-link";
+
+  &#{$se}slide {
+    position: relative;
+  }
+
+  &#{$se}banner {
+    color: var(--xw-lite-slider-banner-color, $xw-lite-slider-banner-color);
+    background-color: var(--xw-lite-slider-banner-bg, $xw-lite-slider-banner-bg);
+    transition: all 0.3s ease;
+    padding: var(--xw-lite-slider-banner-padding, $xw-lite-slider-banner-padding);
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: auto;
+      bottom: 10%;
+      right: 8rem;
+      left: 8rem;
+      padding: 15px 15px 10px;
+      opacity: 0.7;
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: 7%;
+      right: 3rem;
+      left: 3rem;
+    }
+
+    > *:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  &#{$se}arrow {
+    @include media-breakpoint-down(sm) {
+      top: 30%
+    }
+    position: absolute;
+    display: block;
+    top: 50%;
+    border-radius: var(--xw-lite-slider-arrow-border-radius, $xw-lite-slider-arrow-border-radius);
+    height: var(--xw-lite-slider-arrow-size, $xw-lite-slider-arrow-size);
+    width: var(--xw-lite-slider-arrow-size, $xw-lite-slider-arrow-size);
+    z-index: 2;
+    color: var(--xw-lite-slider-arrow-color, $xw-lite-slider-arrow-color);
+    text-transform: uppercase;
+    padding: 0;
+    background-color: var(--xw-lite-slider-arrow-bg, $xw-lite-slider-arrow-bg);
+    border: var(--xw-lite-slider-arrow-border, $xw-lite-slider-arrow-border);
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 150ms ease, border 300ms ease-in-out,  transform .3s ease-in-out;
+    transform: translateY(-80%);
+    line-height: .5;
+
+    &:focus {
+      outline: none;
+    }
+
+    $arrow-disabled: #{&+$sm}disabled;
+
+    &:not(#{$arrow-disabled}):hover{
+      background-color: var(--xw-lite-slider-arrow-hover-bg, $xw-lite-slider-arrow-hover-bg);
+    }
+
+    &#{$sm}left {
+      left: var(--xw-lite-slider-arrow-spacing, $xw-lite-slider-arrow-spacing);
+      &:not(#{$arrow-disabled}):hover{
+        transform: translate(-10px, -80%);
+      }
+    }
+
+
+    &#{$sm}right {
+      right: var(--xw-lite-slider-arrow-spacing, $xw-lite-slider-arrow-spacing);
+      &:not(#{$arrow-disabled}):hover{
+        transform: translate(10px, -80%);
+      }
+    }
+
+    &#{$sm}disabled {
+      opacity: 0.3;
+    }
+
+    &-icon {
+      width: 16px;
+      fill: var(--xw-lite-slider-arrow-color, $xw-lite-slider-arrow-color);
+    }
+  }
+
+  &#{$se}bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 1.7em;
+    left: 50%;
+    display: inline-flex;
+    list-style: none;
+    transform: translateX(-50%);
+  }
+
+  &#{$se}bullet {
+    background-color: var(--xw-lite-slider-bullet-color, $xw-lite-slider-bullet-color);
+    width: var(--xw-lite-slider-bullet-size, $xw-lite-slider-bullet-size);
+    height: var(--xw-lite-slider-bullet-size, $xw-lite-slider-bullet-size);
+    padding: 0;
+    border-radius: 50%;
+    border: var(--xw-lite-slider-bullet-border, $xw-lite-slider-bullet-border);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    line-height: 0;
+    box-shadow: var(--xw-lite-slider-bullet-shadow, $xw-lite-slider-bullet-shadow);
+    margin: 0 0.25em;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus {
+      border: var(--xw-lite-slider-bullet-hover-border, $xw-lite-slider-bullet-hover-border);
+      background-color: var(--xw-lite-slider-bullet-hover-color, $xw-lite-slider-bullet-hover-color);
+    }
+
+    &#{$sm}active {
+      border: var(--xw-lite-slider-bullet-active-border, $xw-lite-slider-bullet-active-border);
+      background-color: var(--xw-lite-slider-bullet-active-color, $xw-lite-slider-bullet-active-color);
+    }
+  }
+
+  &#{$sm}dragging {
+    cursor: grabbing;
+  }
+}
